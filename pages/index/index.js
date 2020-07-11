@@ -1,4 +1,5 @@
 import { request } from '../../request/index';
+import regeneratorRuntiome from '../../lib/runtime.js/runtime';
 //Page Object
 Page({
   data: {
@@ -21,33 +22,30 @@ Page({
     this.getFloorList()
   },
   // 获取轮播图数据据
-  getSwiperList () {
-    request({
-      url:"https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata"
-    }).then(result => {
-      this.setData({
-        swiperList: result.data.message
-      })
+  async getSwiperList () {
+    const res = await request({
+      url:"/home/swiperdata"
+    })
+    this.setData({
+      swiperList: res
     })
   },
   // 获取导航列表数据
-  getCatesList () {
-    request({
-      url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"
-    }).then(result => {
-      this.setData({
-        catesList: result.data.message
-      })
+  async getCatesList () {
+    const res = await request({
+      url:"/home/catitems"
+    })
+    this.setData({
+      catesList: res
     })
   },
   // 获取导航列表数据
-  getFloorList () {
-    request({
-      url:"https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"
-    }).then(result => {
-      this.setData({
-        floorList: result.data.message
-      })
+  async getFloorList () {
+    const res = await request({
+      url:"/home/floordata"
+    })
+    this.setData({
+      floorList: res
     })
   },
 
