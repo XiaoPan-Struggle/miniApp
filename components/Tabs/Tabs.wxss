@@ -1,0 +1,15 @@
+.tabs .goods_item_title {
+  display: flex;
+}
+.tabs .goods_item_title .item_title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx 0;
+  border-bottom: 5rpx solid #fff;
+}
+.tabs .goods_item_title .active {
+  color: var(--themeColor);
+  border-bottom: 5rpx solid currentColor;
+}

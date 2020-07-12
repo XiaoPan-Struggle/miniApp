@@ -33,7 +33,7 @@ page {
   height: 60rpx;
   font-size: 40rpx;
   border-radius: 20rpx;
-  background: linear-gradient(to right, #7659e7, pink);
+  background: -webkit-linear-gradient(to right, #7659e7, pink);
 }
 .category_index .cates_container .content_right .goods_list {
   display: flex;
