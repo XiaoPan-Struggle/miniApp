@@ -1,2 +1,49 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<!-- 收货地址 -->
+<view class="revice_address_row">
+  <view class="address_content">
+    <view class="user_info">
+      <view>收货人: {{address.userName}}</view>
+      <view>{{address.all}}</view>
+    </view>
+    <view class="user_tel">{{address.telNumber}}</view>
+  </view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+  <view class="cart_title">购物车</view>
+  <view class="cart_main">
+    <block>
+      <view class="cart_item" wx:for="{{carts}}" wx:key="cat_id">
+        <!-- 商品图片 -->
+        <view class="cart_img_wrap">
+          <navigator>
+            <image src="{{item.goods_small_logo}}" mode="widthFix" />
+          </navigator>
+        </view>
+        <!-- 商品信息 -->
+        <view class="cart_info_wrap">
+          <view class="goods_name">{{item.goods_name}}</view>
+          <view class="goods_price_wrap">
+            <view class="goods_price">￥{{item.goods_price}}</view>
+            <view class="cart_num_tool">
+              <view class="goods_num num_edit">X {{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 结算 -->
+<view class="footer_tool">
+  <!-- 总价格 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      合计：
+      <text class="total_price_text">￥ {{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order_pay_wrap" bindtap="handleOrderPay">支 付</view>
+</view>

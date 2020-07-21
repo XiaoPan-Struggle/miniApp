@@ -1,1 +1,126 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_info_wrap {
+  position: relative;
+  height: 40vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  margin-top: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+.user_info_wrap .user_btn {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1rpx solid greenyellow;
+  padding: 20rpx 60rpx;
+  font-size: 38rpx;
+  color: #fff;
+}
+.user_content {
+  position: relative;
+  font-size: 34rpx;
+  color: #666;
+}
+.user_content .user_main {
+  position: absolute;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding-bottom: 100rpx;
+}
+.user_content .user_main .history_wrap {
+  padding: 20rpx 0;
+  background-color: #fff;
+  display: flex;
+}
+.user_content .user_main .history_wrap navigator {
+  flex: 1;
+}
+.user_content .user_main .history_wrap navigator .his_num {
+  text-align: center;
+  color: var(--themeColor);
+}
+.user_content .user_main .history_wrap navigator .his_name {
+  text-align: center;
+  font-size: 30rpx;
+}
+.user_content .user_main .orders_wrap {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.user_content .user_main .orders_wrap .orders_title {
+  padding: 15rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .orders_wrap .orders_content {
+  display: flex;
+}
+.user_content .user_main .orders_wrap .orders_content navigator {
+  flex: 1;
+  padding: 15rpx 0;
+}
+.user_content .user_main .orders_wrap .orders_content navigator .iconfont {
+  text-align: center;
+  font-size: 40rpx;
+  color: var(--themeColor);
+}
+.user_content .user_main .orders_wrap .orders_content navigator .order_name {
+  text-align: center;
+}
+.user_content .user_main .address_wrap {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.user_content .user_main .address_wrap navigator {
+  padding: 15rpx;
+}
+.user_content .user_main .other_wrap .customer_wrap {
+  margin-top: 20rpx;
+}
+.user_content .user_main .other_wrap .customer_wrap navigator {
+  overflow: hidden;
+}
+.user_content .user_main .other_wrap .customer_wrap navigator .customer_title {
+  float: left;
+}
+.user_content .user_main .other_wrap .customer_wrap navigator .customer_tel {
+  float: right;
+}
+.user_content .user_main .other_wrap .other_same {
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .other_wrap .other_same navigator {
+  padding: 15rpx;
+}
+.user_content .user_main .recommend {
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .recommend navigator {
+  padding: 15rpx;
+}

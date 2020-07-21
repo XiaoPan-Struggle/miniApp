@@ -1,66 +1,55 @@
+import { request } from '../../request/index';
+import regeneratorRuntiome from '../../lib/runtime.js/runtime';
 // pages/search/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    // 搜索返回的数据
+    goods: [],
+    // 取消的显示和隐藏
+    isFocus:false,
+    // 输入框的值
+    inpValue:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  TimeId: -1,
+  onShow: function () {},
+  // 监听输入框的值的改变
+  handleInput(e) {
+    // 输入框值
+    const { value } = e.detail;
+    // 验证合法性
+    if (!value.trim()) {
+      this.setData({
+        goods:[],
+        isFocus: false
+      })
+      return;
+    }
+    this.setData({
+      isFocus: true
+    })
+    // 发送请求
+    clearTimeout(this.TimeId);
+    this.TimeId = setTimeout(() => {
+      this.qsearch(value);
+    }, 1000);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 发送请求
+  async qsearch(query) {
+    const res = await request({ url: '/goods/qsearch', data: { query } });
+    console.log(res);
+    this.setData({
+      goods: res,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 取消
+  handleCancel () {
+    this.setData({
+      inpValue:'',
+      isFocus: false,
+      goods: []
+    })
   }
-})
+});
